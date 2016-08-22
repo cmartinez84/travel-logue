@@ -11,7 +11,6 @@ Place.prototype.tripID = function(){
   return this.destination + " " + this.date;
 }
 
-var placesArray =[];
 //User Interface Logic
 $(function(){
   $("form").submit(function(event){
@@ -22,12 +21,11 @@ $(function(){
     var eats = $("#eats").val();
     var notes = $("#notes").val();
     var newPlace = new Place(destination, date, landmarks, eats, notes);
-    placesArray.push(newPlace);
-    $("#list").append("<li>"+newPlace.tripID()+"</li>");
-    
 
-    $("li").click(function() {
+    $("#list").append("<li class='placeName'>"+newPlace.tripID()+"</li>");
 
+
+    $(".placeName").last().click(function() {
       $("#log").show();
       $("#log h2").text(newPlace.tripID());
       $(".landmarks").text(newPlace.landmarks);
