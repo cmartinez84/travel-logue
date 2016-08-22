@@ -1,6 +1,9 @@
-form{
+h1 {
+  padding: 20px;
+}
+
+form {
   background: #ffe6e6;
   border-radius: 10px;
-
-  padding: 100px;
+  padding: 20px;
 }
